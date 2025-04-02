@@ -34,7 +34,6 @@ const fetchHomeDoc = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
@@ -60,7 +59,6 @@ const fetchHomeDocStats = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
@@ -86,7 +84,6 @@ const searchHomeDocs = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
@@ -106,7 +103,6 @@ const updateCurrentHomeDoc = createAsyncThunk(
         },
       };
       const pageTypeParam = pageType ? `${pageType}/` : "";
-      console.log(pageTypeParam, pageType);
 
       const response = await axios.patch(
         `${backendURL}/api/HomeDocs/${pageTypeParam}${id}`,
@@ -116,7 +112,6 @@ const updateCurrentHomeDoc = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
@@ -142,7 +137,6 @@ const createHomeDoc = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
@@ -168,7 +162,6 @@ const createSubHomeDoc = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
@@ -195,7 +188,6 @@ const deleteHomeDoc = createAsyncThunk(
 
       return response.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
       } else {
